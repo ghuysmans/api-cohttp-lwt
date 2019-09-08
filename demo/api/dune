@@ -1,0 +1,4 @@
+(library
+ (name api)
+ (libraries api_cohttp_lwt)
+ (preprocess (pps ppx_deriving_yojson lwt_ppx)))

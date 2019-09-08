@@ -1,0 +1,4 @@
+(executable
+ (name client)
+ (libraries js_of_ocaml-lwt api_cohttp_lwt api)
+ (preprocess (pps lwt_ppx js_of_ocaml-ppx)))
