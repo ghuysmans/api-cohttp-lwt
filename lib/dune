@@ -1,0 +1,4 @@
+(library
+ (name api_cohttp_lwt)
+ (public_name api-cohttp-lwt)
+ (libraries xml-light yojson ppx_deriving_yojson.runtime lwt cohttp-lwt-jsoo))
