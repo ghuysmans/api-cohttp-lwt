@@ -1,0 +1,14 @@
+type full_person = {
+  name: string;
+  age: int;
+}
+
+type 'p generic_movie = {
+  title: string;
+  director: 'p;
+  year: int;
+}
+(* can't use [constraint 'a = <d: 'p>]... *)
+
+type search = string generic_movie list
+type movie = full_person generic_movie

@@ -1,0 +1,11 @@
+(rule
+ (targets api_t.ml api_t.mli)
+ (deps api.atd)
+ (action (run atdgen -t %{deps})))
+(rule
+ (targets api_j.ml api_j.mli)
+ (deps api.atd)
+ (action (run atdgen -j %{deps})))
+(executable
+ (name demo)
+ (libraries atdgen-runtime))
