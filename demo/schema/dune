@@ -1,0 +1,3 @@
+(executable
+ (name schema)
+ (libraries ojt))

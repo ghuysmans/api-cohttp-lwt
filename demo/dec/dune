@@ -1,0 +1,3 @@
+(library
+ (name dec)
+ (libraries api decoders-yojson))

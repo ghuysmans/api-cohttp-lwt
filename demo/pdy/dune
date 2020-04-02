@@ -1,0 +1,4 @@
+(library
+ (name pdy)
+ (libraries api ppx_deriving_yojson)
+ (preprocess (pps ppx_deriving_yojson)))

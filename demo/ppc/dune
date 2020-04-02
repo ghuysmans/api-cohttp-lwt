@@ -1,0 +1,4 @@
+(library
+ (name ppc)
+ (libraries api ppx_protocol_conv_json)
+ (preprocess (pps ppx_protocol_conv)))

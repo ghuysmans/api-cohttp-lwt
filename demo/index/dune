@@ -1,0 +1,3 @@
+(library
+ (name index)
+ (libraries api dec ojt pdy ppc pyc))
