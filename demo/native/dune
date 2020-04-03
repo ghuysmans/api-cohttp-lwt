@@ -1,4 +1,4 @@
 (executable
  (name client)
- (libraries cohttp-lwt-unix api_cohttp_lwt api ojt)
+ (libraries cohttp-lwt-unix api_cohttp_lwt api index)
  (preprocess (pps lwt_ppx)))

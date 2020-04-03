@@ -1,4 +1,4 @@
 (library
  (name api)
- (libraries cohttp-lwt yojson lwt_ppx)
+ (libraries cohttp-lwt yojson)
  (preprocess (pps lwt_ppx)))

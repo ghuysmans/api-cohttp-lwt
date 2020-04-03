@@ -1,4 +1,4 @@
 (library
  (name pyc)
- (libraries api ppx_yojson_conv)
+ (libraries api)
  (preprocess (pps ppx_yojson_conv)))
