@@ -6,9 +6,12 @@ include Cohttp_lwt.S.Client with
     Cohttp.Code.meth ->
     Uri.t -> (Cohttp.Response.t * Cohttp_lwt.Body.t) Lwt.t
 
-val ctx_of_router: (
+
+type router = (
   ?headers:Cohttp.Header.t ->
   ?body:string ->
   Cohttp.Code.meth ->
   (Cohttp.Code.status_code * string) Lwt.t
-) Routes.router -> ctx
+) Routes.router
+
+val ctx_of_router: router -> ctx

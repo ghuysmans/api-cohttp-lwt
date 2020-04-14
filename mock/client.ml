@@ -10,6 +10,13 @@ let sexp_of_ctx _ = Sexplib0.Sexp.List [] (* TODO? *)
 let default_ctx ?headers ?body ?chunked _ _ =
   Lwt.fail_with "mock" [@@ocaml.warning "-27"]
 
+type router = (
+  ?headers:Cohttp.Header.t ->
+  ?body:string ->
+  Cohttp.Code.meth ->
+  (Cohttp.Code.status_code * string) Lwt.t
+) Routes.router
+
 let ctx_of_router router ?headers ?body ?chunked meth uri =
   ignore chunked;
   let%lwt status, body =
