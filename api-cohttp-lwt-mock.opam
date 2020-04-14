@@ -1,0 +1,15 @@
+opam-version: "1.2"
+name: "api-cohttp-lwt-mock"
+version: "0.0.1"
+maintainer: "Guillaume Huysmans <ghuysmans99@gmail.com>"
+authors: "Guillaume Huysmans <ghuysmans99@gmail.com>"
+homepage: "https://github.com/ghuysmans/api-cohttp-lwt/"
+bug-reports: "https://github.com/ghuysmans/api-cohttp-lwt/issues"
+dev-repo: "git://github.com/ghuysmans/api-cohttp-lwt/"
+build: [["dune" "build" "-p" name "-j" jobs]]
+synopsis: "HTTP API client mock"
+depends: [
+  "dune" {build}
+  "cohttp-lwt"
+  "routes"
+]

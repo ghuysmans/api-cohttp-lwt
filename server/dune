@@ -1,0 +1,5 @@
+(library
+ (name api_cohttp_lwt_server)
+ (public_name api-cohttp-lwt-server)
+ (libraries cohttp-lwt-unix api-cohttp-lwt-mock)
+ (preprocess (pps lwt_ppx)))
