@@ -1,0 +1,3 @@
+(library
+ (name mock)
+ (libraries cohttp-lwt api-cohttp-lwt-mock api))

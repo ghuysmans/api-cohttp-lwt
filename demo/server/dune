@@ -1,0 +1,3 @@
+(executable
+ (name server)
+ (libraries cohttp-lwt-unix api-cohttp-lwt-server mock))
