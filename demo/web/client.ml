@@ -1,7 +1,6 @@
 open Js_of_ocaml
 
-(* module M = Api.Make (Cohttp_lwt_xhr.Client) *)
-module M = Api.Client.Make (Api_cohttp_lwt.Cors_anywhere) (Ojt)
+module M = Api.Client.Make (Cohttp_lwt_xhr.Client) (Ojt)
 
 let _ = Dom_events.(listen Dom_html.document Typ.domContentLoaded) @@ fun _ _ ->
   match Dom_html.getElementById_coerce "l" Dom_html.CoerceTo.ul with
