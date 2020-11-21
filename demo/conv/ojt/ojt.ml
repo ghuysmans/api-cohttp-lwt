@@ -35,9 +35,9 @@ let schema = schema list
 
 module Y = Make (Json_repr.Yojson)
 
-let list_of_yojson js =
+let list_of_json raw =
   try
-    Result.Ok (Y.destruct list js)
+    Result.Ok (Yojson.Safe.from_string raw |> Y.destruct list)
   with e ->
     print_error Format.str_formatter e;
     Result.Error (Format.flush_str_formatter ())

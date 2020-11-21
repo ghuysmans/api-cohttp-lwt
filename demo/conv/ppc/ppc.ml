@@ -15,7 +15,7 @@ type employees = {
   data: t list;
 } [@@deriving protocol ~driver:(module Json)]
 
-let list_of_yojson js =
-  match employees_of_json js with
+let list_of_json js =
+  match Yojson.Safe.from_string js |> employees_of_json with
   | Result.Ok r -> Result.Ok (r.data)
   | Error e -> Error (Json.error_to_string_hum e)

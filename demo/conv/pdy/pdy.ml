@@ -13,7 +13,7 @@ type employees = {
   data: t list;
 } [@@deriving yojson]
 
-let list_of_yojson js =
-  match employees_of_yojson js with
+let list_of_json js =
+  match Yojson.Safe.from_string js |> employees_of_yojson with
   | Result.Ok e -> Result.Ok e.data
   | Error e -> Error e

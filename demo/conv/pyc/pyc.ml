@@ -13,5 +13,5 @@ type employees = {
   data: t list;
 } [@@deriving yojson]
 
-let list_of_yojson js =
-  Result.Ok (employees_of_yojson js).data
+let list_of_json js =
+  Result.Ok (Yojson.Safe.from_string js |> employees_of_yojson).data

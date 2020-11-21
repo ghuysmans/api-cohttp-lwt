@@ -33,7 +33,7 @@ let list =
   field "data" (list t) >>= fun l ->
   succeed l
 
-let list_of_yojson js =
-  match decode_value list js with
+let list_of_json js =
+  match Yojson.Safe.from_string js |> decode_value list with
   | Result.Ok l -> Result.Ok l
   | Error _ -> Error "decoder" (* FIXME *)
