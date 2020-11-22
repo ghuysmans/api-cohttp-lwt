@@ -4,7 +4,16 @@ module Make () = struct
   let list ?headers ?body meth =
     ignore headers;
     match meth, body with
-    | `GET, _ -> Lwt.return (`OK, "TODO")
+    | `GET, _ -> Lwt.return (`OK, "{\
+      \"status\": \"success\",\
+      \"data\": [{\
+        \"id\": \"1\",\
+        \"employee_name\": \"Bob\",\
+        \"employee_salary\": \"42000\",\
+        \"employee_age\": \"50\",\
+        \"profile_image\": \"\"\
+      }]}"
+    )
     | _ -> Lwt.return (`Method_not_allowed, "meh")
 
   let get id ?headers ?body meth =
