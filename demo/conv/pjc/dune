@@ -1,0 +1,4 @@
+(library
+ (name pjc)
+ (libraries api)
+ (preprocess (pps ppx_jsobject_conv js_of_ocaml-ppx)))
